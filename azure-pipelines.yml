@@ -19,4 +19,4 @@ jobs:
     pool:
       vmImage: 'windows-latest'
     steps:
-    - powershell: 'Ok'
+    - powershell: '"Ok"'
