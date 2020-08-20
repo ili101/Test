@@ -21,3 +21,16 @@ jobs:
     steps:
     - powershell: Get-Module Pester | out-String  ; Get-Module Pester -ListAvailable | out-String
     - pwsh: Get-Module Pester | out-String  ; Get-Module Pester -ListAvailable | out-String
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          'Loaded'
+          Get-Module Pester | out-String
+          'Available'
+          Get-Module Pester -ListAvailable | out-String
+          Install-Module -Name Pester -Force -SkipPublisherCheck -MaximumVersion 4.99.99
+          'Loaded'
+          Get-Module Pester | out-String
+          'Available'
+          Get-Module Pester -ListAvailable | out-String
