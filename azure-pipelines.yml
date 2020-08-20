@@ -19,4 +19,5 @@ jobs:
     pool:
       vmImage: 'windows-latest'
     steps:
-    - powershell: '"Ok 5"'
+    - powershell: Get-Module Pester -ListAvailable
+    - pwsh: Get-Module Pester -ListAvailable
